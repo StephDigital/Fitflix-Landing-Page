@@ -1,0 +1,462 @@
+/*Variables for color*/
+:root {
+  --primary-color: #e50914;
+  --dark-color: #141414;
+}
+
+/*Format for all element by default*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*Format of the body by default*/
+body {
+  font-family: "Arial", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #000;
+  color: #999;
+}
+
+/*Format of unorded list*/
+ul {
+  list-style: none;
+}
+
+/*Format of header*/
+h1,
+h2,
+h3,
+h4 {
+  color: #fff;
+}
+
+/*Format for links*/
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*Format for paragraph*/
+p {
+  margin: 0.5rem 0;
+}
+
+/*Format for image*/
+img {
+  width: 100%;
+}
+
+/*Format for the class showcase*/
+.showcase {
+  width: 100%;
+  height: 93vh;
+  position: relative;
+  background: url("../img/background.jpg") no-repeat center center/cover;
+}
+
+/*To make the background less bright*/
+/*The ::after selector inserts something after the content of each selected element(s)*/
+.showcase::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  /*Use the color black very transparent*/
+  background: rgba(0, 0, 0, 0.6);
+  /*Add a shadow from the borders to the inside*/
+  box-shadow: inset 120px 100px 250px #000000, inset -120px -100px 250px #000000;
+}
+
+/*Format for the class showcase-top*/
+.showcase-top {
+  position: relative;
+  height: 90px;
+  /*Increase the brightless of the text because of the black transparent on the background*/
+  z-index: 2;
+}
+
+/*Format for tag "img" in showcase-top*/
+.showcase-top img {
+  width: 90px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  /*The translate() CSS function repositions an element in the horizontal 
+  and/or vertical directions. Its result is a <transform-function> data type.*/
+  transform: translate(-50%, -10%);
+}
+
+/*Format for tag "a" (button with link) in showcase-top*/
+.showcase-top a {
+  position: absolute;
+  top: 30%;
+  right: 0;
+  transform: translate(-50%, -50%);
+}
+
+/*Format for the class showcase-content*/
+.showcase-content {
+  position: relative;
+  margin: auto;
+  display: flex;
+  /*Change the flex direction from range to column*/
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 5rem;
+  /*Increase the brightless of the text because of the black transparent on the background*/
+  z-index: 2;
+}
+
+/*Format for the tag "h1" in the class showcase-content*/
+.showcase-content h1 {
+  font-weight: 700;
+  font-size: 5.2rem;
+  line-height: 1.1;
+  margin: 0 0 2rem;
+}
+
+/*Format for the tag "p" in the class showcase-content*/
+.showcase-content p {
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 400;
+  font-size: 1.9rem;
+  line-height: 1.25;
+  margin: 0 0 2rem;
+}
+
+/*-----Tabs--------*/
+
+/*Format for all tabs by default*/
+.tabs {
+  background: var(--dark-color);
+  padding-top: 1rem;
+  border-bottom: 3px solid #3d3d3d;
+}
+
+/*Format for container in tabs*/
+.tabs .container {
+  display: grid;
+  /*Repeat 3 times 1fr*/
+  /* Fr is a fractional unit and 1fr is for 1 part of the available space*/
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/*Format for tag "p" in tabs*/
+.tabs p {
+  font-size: 1.2rem;
+  padding-top: 0.5rem;
+}
+
+/*Format for tag "div" in container in tabs*/
+/*It's for target the 3 div for the 3 icons from Font Awsome*/
+.tabs .container > div {
+  padding: 1.5rem 0;
+}
+
+/*Format for tag "div" in container in tabs when the mouse goes over*/
+/*It's for target the 3 div for the 3 icons from Font Awsome*/
+.tabs .container > div:hover {
+  color: #ffff;
+  cursor: pointer;
+}
+
+/*Format for class tab-border to have a thin border bottom under the icons*/
+.tab-border {
+  border-bottom: var(--primary-color) 4px solid;
+}
+
+/*-----Tab Content--------*/
+
+/*Format for tab content by default*/
+.tab-content {
+  padding: 3rem 0;
+  background: #000;
+  color: #fff;
+}
+
+/*Hide content initially*/
+#tab-1-content,
+#tab-2-content,
+#tab-3-content {
+  display: none;
+}
+
+/*Show content*/
+.show {
+  display: block !important; /*!important make this command operational whatever the rules*/
+}
+
+/*Format for id tab-1-content in the class tab-1-content-inner for the detail of the icons*/
+#tab-1-content .tab-1-content-inner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Format for id tab-2-content in the class tab-2-content-top for the text and the button
+on the same line*/
+#tab-2-content .tab-2-content-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Format for id tab-2-content in the class tab-2-content-bottom for the 3 images with 
+their text on the same line*/
+#tab-2-content .tab-2-content-bottom {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/*-----Table--------*/
+
+/* Format for the table */
+.table {
+  width: 100%;
+  margin-top: 2rem;
+  /* Delete the line that separate the columns */
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Format for the 2 types of table head */
+.table thead th {
+  text-transform: uppercase;
+  padding: 0.8rem;
+}
+
+/* Format for the content of the table(rows) */
+.table tbody tr td {
+  color: #999;
+  padding: 0.8rem 1.2rem;
+  text-align: center;
+}
+
+/* Format for the content of the first row of table */
+.table tbody tr td:first-child {
+  text-align: left;
+}
+
+/* Format for the background of the rows in the table
+The :nth-child(n) selector matches every element that is the nth child, regardless of type, of its parent.
+"odd" represents elements whose numeric position in a series of siblings is odd: 1, 3, 5, etc. */
+.table tbody tr:nth-child(odd) {
+  background: #222;
+}
+
+/*-----Footer--------*/
+
+/* Format footer by default */
+.footer {
+  max-width: 75%;
+  margin: 1rem auto;
+  overflow: auto;
+}
+
+/* Format text and link in the footer */
+.footer,
+.footer a {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+/* Format tag "p" in footer */
+.footer p {
+  margin-bottom: 1.5rem;
+}
+
+/* Format of the class fotter-cols in footer */
+.footer .footer-cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+}
+
+/* Format of the tag "li" of the list */
+.footer li {
+  line-height: 1.9;
+}
+
+/*-----Container--------*/
+
+/*Format for all containers by default*/
+.container {
+  max-width: 70%;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+/*-----Text Style--------*/
+
+/*Format for text extra large*/
+.text-xl {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/*Format for text  large*/
+.text-lg {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+/*Format for text  medium*/
+.text-mdg {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/*Format for text align in the center*/
+.text-center {
+  text-align: center;
+}
+
+/*Format for text  in dark (light grey)*/
+.text-dark {
+  color: #999;
+}
+
+/*-----Buttons--------*/
+
+/*Format for all buttons by default*/
+.btn {
+  display: inline-block;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  outline: none;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+  border-radius: 2px;
+}
+
+/*Format for the button when the mouse goes over*/
+.btn:hover {
+  opacity: 0.9;
+}
+
+/*Format for the class btn-rounded*/
+.btn-rounded {
+  border-radius: 5px;
+}
+
+/*Format for the buttons extra large*/
+.btn-xl {
+  font-size: 2rem;
+  padding: 1.5rem 2.1rem;
+  text-transform: uppercase;
+}
+
+/*Format for the buttons large*/
+.btn-lg {
+  font-size: 1rem;
+  padding: 0.8rem 1.3rem;
+  text-transform: uppercase;
+}
+
+/*Format of the icon in the button*/
+.btn-icon {
+  margin-left: 1rem;
+}
+
+/* Format to be responsive for the small screen (mobile) */
+@media (max-width: 960px) {
+  .showcase {
+    height: 70vh;
+  }
+
+  /* No display the text under the icon */
+  .hide-sm {
+    display: none;
+  }
+  /* Move the logo to the left */
+  .showcase-top img {
+    top: 30%;
+    left: 5%;
+    transform: translate(0);
+  }
+
+  /* Decrease the font size of the tag h1 in the class showcase content */
+  .showcase-content h1 {
+    font-size: 3.7rem;
+    line-height: 1rem;
+  }
+
+  /* Decrease the font size of the tag p in the class showcase content */
+  .showcase-content p {
+    font-size: 1.5rem;
+  }
+
+  /* Decreasee the number of columns in the class footer-cols in footer */
+  .footer .footer-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Decrease the button size */
+  .btn-xl {
+    font-size: 1.5rem;
+    padding: 1.4rem 2rem;
+  }
+
+  /* Decrease text size */
+  .text-xl {
+    font-size: 1.5rem;
+  }
+
+  .text-lg {
+    font-size: 1.3rem;
+  }
+
+  .text-md {
+    font-size: 1rem;
+  }
+}
+
+/* Format to be responsive for the small screen (mobile)
+    to stack the content (detail) of the icons */
+@media (max-width: 700px) {
+  .showcase::after {
+    /*Add a shadow from the borders to the inside*/
+    box-shadow: inset 80px 80px 250px #000000, inset -80px -80px 250px #000000;
+  }
+
+  #tab-1-content .tab-1-content-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  #tab-2-content .tab-2-content-top {
+    display: block;
+    text-align: center;
+  }
+
+  #tab-2-content .tab-2-content-bottom {
+    grid-template-columns: 1fr;
+  }
+}
