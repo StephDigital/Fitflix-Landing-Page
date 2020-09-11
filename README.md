@@ -25,5 +25,5 @@ After downloading, edit HTML, CSS, and JavaScript with your text editor to make 
 
 ## License
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/StartBootstrap/startbootstrap-landing-page/master/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/StephDigital/Fitflix-Landing-Page/blob/master/LICENSE)
 
